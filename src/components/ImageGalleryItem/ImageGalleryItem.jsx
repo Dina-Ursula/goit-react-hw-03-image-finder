@@ -4,9 +4,19 @@ import {
   GalleryItemImage,
 } from './ImageGalleryItem.styled';
 
-const ImageGalleryItem = ({ image }) => {
+const ImageGalleryItem = ({ image, showModal }) => {
+  function clickEvent(evt) {
+    evt.preventDefault();
+
+    showModal(evt.currentTarget.dataset.url);
+  }
+
   return (
-    <ImageGalleryItemStyled class="gallery-item" key={image.id}>
+    <ImageGalleryItemStyled
+      key={image.id}
+      data-url={image.largeImageURL}
+      onClick={clickEvent}
+    >
       <GalleryItemImage src={image.webformatURL} alt="" />
     </ImageGalleryItemStyled>
   );

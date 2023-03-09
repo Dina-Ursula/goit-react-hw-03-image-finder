@@ -140,7 +140,7 @@ img {
  * Стили компонента Modal
  */
 
-.Overlay {
+/* .Overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -156,7 +156,7 @@ img {
 .Modal {
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
-}
+} */
 
 /*
 * Стили компонента Buton (Load more)

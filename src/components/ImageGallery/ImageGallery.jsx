@@ -2,11 +2,11 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import React from 'react';
 import { ImageGalleryStyled } from './ImageGallery.styled';
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ images, showModal }) => {
   return (
-    <ImageGalleryStyled class="gallery">
+    <ImageGalleryStyled>
       {images.map(image => (
-        <ImageGalleryItem image={image} />
+        <ImageGalleryItem image={image} showModal={showModal} />
       ))}
     </ImageGalleryStyled>
   );

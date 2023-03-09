@@ -20,7 +20,6 @@ class Searchbar extends Component {
     evt.preventDefault();
 
     this.props.onSubmit(this.state.imageName);
-    this.setState({ imageName: '' });
   };
   render() {
     return (
