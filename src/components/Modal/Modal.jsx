@@ -13,7 +13,7 @@ class Modal extends Component {
     return (
       <Overlay onClick={this.props.closeModal}>
         <ModalStyled class="modal">
-          <img src={this.props.image} alt="image" />
+          <img src={this.props.image} alt="big image mode" />
         </ModalStyled>
       </Overlay>
     );
