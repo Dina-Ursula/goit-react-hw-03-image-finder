@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
   ImageGalleryItemStyled,
   GalleryItemImage,
@@ -23,3 +25,8 @@ const ImageGalleryItem = ({ image, showModal }) => {
 };
 
 export default ImageGalleryItem;
+
+ImageGalleryItem.propTypes = {
+  image: PropTypes.array.isRequired,
+  showModal: PropTypes.func.isRequired,
+};

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { Overlay, ModalStyled } from './Modal.styled';
 
 class Modal extends Component {
@@ -12,7 +14,7 @@ class Modal extends Component {
   render() {
     return (
       <Overlay onClick={this.props.closeModal}>
-        <ModalStyled class="modal">
+        <ModalStyled>
           <img src={this.props.image} alt="big mode" />
         </ModalStyled>
       </Overlay>
@@ -20,3 +22,7 @@ class Modal extends Component {
   }
 }
 export default Modal;
+
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};

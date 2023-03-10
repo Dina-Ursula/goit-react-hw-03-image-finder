@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import {
   SearchBar,
   SearchForm,
@@ -11,7 +13,6 @@ class Searchbar extends Component {
   state = {
     imageName: '',
   };
-  componentDidMount() {}
 
   handleNameChange = evt => {
     this.setState({ imageName: evt.currentTarget.value.toLowerCase() });
@@ -30,10 +31,8 @@ class Searchbar extends Component {
           </SearchFormButton>
 
           <SearchFormInput
-            class="input"
             type="text"
             autocomplete="off"
-            autofocus
             placeholder="Search images and photos"
             onChange={this.handleNameChange}
           />
@@ -42,4 +41,9 @@ class Searchbar extends Component {
     );
   }
 }
+
 export default Searchbar;
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
