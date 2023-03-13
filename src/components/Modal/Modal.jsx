@@ -5,12 +5,19 @@ import { Overlay, ModalStyled } from './Modal.styled';
 
 class Modal extends Component {
   componentDidMount() {
-    window.addEventListener('keydown', e => {
-      if (e.code === 'Escape') {
-        this.props.closeModal();
-      }
-    });
+    window.addEventListener('keydown', this.onClose);
   }
+
+  onClose = e => {
+    if (e.code === 'Escape') {
+      this.props.closeModal();
+    }
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onClose);
+  }
+
   render() {
     return (
       <Overlay onClick={this.props.closeModal}>
@@ -24,5 +31,5 @@ class Modal extends Component {
 export default Modal;
 
 Modal.propTypes = {
-  onClose: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
 };
